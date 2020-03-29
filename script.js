@@ -13,17 +13,21 @@ function generatePassword() {
   alert("Select your criteria for password generation");
   var PassLen = prompt("Enter the required length of the password - Enter a whole number between 8 and 128");
 
+
+  // Used while loop and it will keep prompting until user input number between 8 to 128 number. It will alert user if number is less than 8 or more than 128
   while (PassLen < 8 || PassLen > 128 || isNaN(PassLen)) {
     alert("Incorrect password length. Please enter a number between 8 & 128");
     PassLen = prompt("Enter the required length of the password - Enter a whole number between 8 and 128");
   }
   PassLen = Math.floor(PassLen);
 
+  // Added confirm prompt asking the criteria to include or no?
   var LwrCase = confirm("Do you want to include lowercase characters? - Select 'OK' for Yes and 'Cancel' for No");
   var UprCase = confirm("Do you want to include uppercase characters? - Select 'OK' for Yes and 'Cancel' for No");
   var Numeric = confirm("Do you want to include numeric characters? - Select 'OK' for Yes and 'Cancel' for No");
   var SplChar = confirm("Do you want to include special characters? - Select 'OK' for Yes and 'Cancel' for No");
 
+  // User will be asked to include at least ine criteria of selection
   while (LwrCase == false && UprCase == false && Numeric == false && SplChar == false) {
     alert("You need to select Yes for at least one criteria");
     LwrCase = confirm("Do you want to include lowercase characters? - Select 'OK' for Yes and 'Cancel' for No");
@@ -32,6 +36,7 @@ function generatePassword() {
     SplChar = confirm("Do you want to include special characters? - Select 'OK' for Yes and 'Cancel' for No");
   }
 
+  //alert to display user's selected criteria for password
   alert("Your selection criteria is as follows:" + "\n" + "\n" +
     "Password length is " + PassLen + "\n" +
     "Include lowercase characters = " + LwrCase + "\n" +
