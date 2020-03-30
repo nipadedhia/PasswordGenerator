@@ -45,6 +45,8 @@ function generatePassword() {
     "Include Special characters = " + SplChar
   );
 
+
+  //adding arrays
   var AllChars = [];
 
   if (LwrCase) {
